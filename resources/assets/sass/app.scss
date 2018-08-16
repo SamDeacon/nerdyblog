@@ -4,7 +4,7 @@
 
 // Variables
 @import 'variables';
-
+$body-background-color: whitesmoke;
 // Bootstrap
 // @import '~bootstrap/scss/bootstrap';
 // @import 'node_modules/font-awesome/scss/font-awesome';
@@ -20,3 +20,8 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+// Custom SASS pages
+@import 'overrides';
+@import 'helpers';
+@import 'styles';
