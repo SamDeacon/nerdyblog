@@ -28,18 +28,22 @@
     }
   }
 }
-&:hover{
-  .navbar-dropdown{
+.dropdown{
+  &:hover{
+    .navbar-dropdown{
+      display: block;
+    }
+  }
+  &.is-aligned-right .navbar-dropdown{
+    left: auto;
+    right: 0;
+  }
+  &.is-open .navbar-dropdown{
     display: block;
   }
 }
-&.is-aligned-right .navbar-dropdown{
-  left: auto;
-  right: 0;
-}
-&.is-open .navbar-dropdown{
-  display: block;
-}
+
+
 
 
 /* ========================================
