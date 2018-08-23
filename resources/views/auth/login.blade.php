@@ -26,7 +26,7 @@
                 <p class="help is-danger">{{$errors->first('password')}}</p>
               @endif
             </div>
-            <b-checkbox name="remember" class="m-t-20">Remember Me </b-checkbox>
+            <b-checkbox name="remember" class="m-t-20">Remember Me</b-checkbox>
             <button class="button is-primary is-outlined is-fullwidth m-t-30">Log in</button>
             <h5 class="has-text-centered m-t-10"><a href="{{route('password.request')}}" class="is-muted">Forgotten Password? click here to reset.</a></h5>
 
@@ -36,4 +36,13 @@
       <h5 class="has-text-centered m-t-5"><a href="{{route('register')}}">Click here to creat an account.</a></h5>
     </div>
   </div>
+@endsection
+@section('scripts')
+<script>
+var app = new Vue({
+     el: '#app',
+     data: {
+     }
+});
+</script>
 @endsection
