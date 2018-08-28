@@ -21,7 +21,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in! <strong><a href="{{route('manage.dashboard')}}">Take me to the dashboard!</a></strong> 
                 </div>
                 </div>
             </div>

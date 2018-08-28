@@ -63,8 +63,7 @@ class UserController extends Controller
       $user->name = $request->name;
       $user->email = $request->email;
       // $user->password = Hash::make($password);
-      $user->password = $password;
-
+      $user->password = Hash::make($password);
       if ($user->save()) {
         return redirect()->route('users.show', $user->id);
       } else {
