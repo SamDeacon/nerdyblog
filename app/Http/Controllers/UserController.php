@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Request;
 use App\User;
+use App\Role;
 use DB;
 use Session;
 use Hash;
@@ -81,7 +82,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::findOrFail($id);
+        $user = User::where('id', $id)->with('roles')->first();
         return view('manage.users.show')->withUser($user);
     }
 
@@ -93,8 +94,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+      $roles = Role::all();
       $user = User::findOrFail($id);
-      return view('manage.users.edit')->withUser($user);
+      return view('manage.users.edit')->withUser($user)->withRoles($roles);
+
     }
 
     /**
@@ -114,6 +117,9 @@ class UserController extends Controller
       $user = User::findOrFail($id);
       $user->name = $request->name;
       $user->email = $request->email;
+      if ($request->roles) {
+        $user->syncRoles(explode(',', $request->roles));
+      }
 
       if ($request->password_options == 'auto') {
         # auto generated password

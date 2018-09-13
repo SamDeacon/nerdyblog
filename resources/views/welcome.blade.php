@@ -70,6 +70,7 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ route('manage.dashboard') }}">Hey {{ auth()->user()->name }} <span class="icon"><i class="fa fa-caret-down"></i></span></a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Signup</a>

@@ -40,6 +40,12 @@
             </label>
           </div>
           </div>
+            <input type="hidden" name="roles" :value="rolesSelected">
+            @foreach  ($roles as $key => $role)
+            <div class="field">
+                <b-checkbox  v-model="rolesSelected" native-value="{{$role->id}}">{{$role->display_name}} (<em>{{$role->description}}</em>)</b-checkbox>
+            </div>
+            @endforeach
         <button class="button is-primary">Update User</button>
       </form>
     </div>
@@ -52,7 +58,8 @@
   var app = new Vue({
     el: '#app',
     data: {
-      password_options: 'manual'
+      password_options: 'manual',
+      rolesSelected: {!! $user->roles->pluck('id') !!}
     }
   });
 </script>

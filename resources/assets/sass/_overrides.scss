@@ -97,5 +97,15 @@ pre{
   max-height: 3rem;
 }
  .navbar {
-  height: 5rem;
+  height: 64px;
+  button{
+    font-size: 1em;
+  }
+}
+#admin-slideout-button{
+  font-size: 1.55em;
+}
+
+.navbar-burger{
+  border: none;
 }
